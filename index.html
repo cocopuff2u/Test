@@ -554,6 +554,7 @@
             padding: 4px;
             background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
             box-shadow: 0 10px 40px rgba(255, 45, 149, 0.3);
+            min-height: 300px;
         }
 
         .profile-photo {
@@ -562,6 +563,15 @@
             object-fit: cover;
             border-radius: 16px;
             display: block;
+            background: var(--bg-card);
+        }
+
+        @media (max-width: 768px) {
+            .profile-photo-wrapper {
+                max-width: 300px;
+                margin: 0 auto;
+                min-height: 300px;
+            }
         }
 
         .about-text p {
@@ -1631,12 +1641,12 @@
     </section>
 
     <section id="about">
-        <div class="about-image">
+        <div class="about-image fade-in-left">
             <div class="profile-photo-wrapper">
-                <img src="Liz.jpg" alt="Liz Beach - Barber" class="profile-photo">
+                <img src="Liz.jpg" alt="Liz Beach - Barber" class="profile-photo" width="300" height="300">
             </div>
         </div>
-        <div class="about-text">
+        <div class="about-text fade-in-right">
             <h2 class="section-title">THE BARBER</h2>
             <p><strong>Liz Beach</strong> isn't just a barber, she's an artist with clippers. Known for her precision fades, clean lineups, and attention to detail, Liz has built a reputation for making every client look and feel their best.</p>
             <p>Whether you're after a classic cut, a fresh fade, or something completely custom, you're in expert hands. Every cut is crafted with care, skill, and a whole lot of passion for the craft.</p>
@@ -1656,8 +1666,8 @@
 
     <section id="services">
         <div class="services-container">
-            <h2 class="section-title">SERVICES</h2>
-            <div class="services-grid">
+            <h2 class="section-title fade-in">SERVICES</h2>
+            <div class="services-grid stagger-children">
                 <div class="service-card">
                     <h3>New Client / First Timer</h3>
                     <div class="price">$37</div>
@@ -1740,9 +1750,9 @@
 
     <section id="location">
         <div class="location-container">
-            <h2 class="section-title">FIND ME</h2>
+            <h2 class="section-title fade-in">FIND ME</h2>
             <div class="location-content">
-                <div class="location-info">
+                <div class="location-info fade-in-left">
                     <div class="location-card">
                         <h3>📍 LOCATION</h3>
                         <p><strong>Geers Barbershop</strong></p>
@@ -1768,7 +1778,7 @@
                         <p><a href="https://book.thecut.co/lizcutzhair" target="_blank">Book on The Cut App</a></p>
                     </div>
                 </div>
-                <div class="location-map">
+                <div class="location-map fade-in-right">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.8!2d-80.0134!3d32.8076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7a5a77e5c9c7%3A0x1234567890abcdef!2s1350%20Ashley%20River%20Rd%2C%20Charleston%2C%20SC%2029412!5e0!3m2!1sen!2sus!4v1703862000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -1777,8 +1787,8 @@
 
     <section id="testimonials">
         <div class="testimonials-container">
-            <h2 class="section-title">WHAT CLIENTS SAY</h2>
-            <div class="testimonials-grid">
+            <h2 class="section-title fade-in">WHAT CLIENTS SAY</h2>
+            <div class="testimonials-grid stagger-children">
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">Liz always does an exceptional job! The quality and consistency of each haircut has kept me coming back over the last year. Give her a shot if you want a laid back barber that doesn't miss. She's worth every penny!</p>
@@ -1814,9 +1824,9 @@
     </section>
 
     <section id="book">
-        <h2 class="section-title">BOOK YOUR CUT</h2>
-        <p>Ready for a fresh look? Book your appointment through The Cut app. Quick, easy, no waiting.</p>
-        <a href="https://book.thecut.co/lizcutzhair" target="_blank" class="book-btn">BOOK ON THE CUT</a>
+        <h2 class="section-title fade-in">BOOK YOUR CUT</h2>
+        <p class="fade-in">Ready for a fresh look? Book your appointment through The Cut app. Quick, easy, no waiting.</p>
+        <a href="https://book.thecut.co/lizcutzhair" target="_blank" class="book-btn fade-in">BOOK ON THE CUT</a>
         <p style="margin-top: 30px; color: var(--text-muted); font-size: 0.9rem;">
             <strong style="color: var(--neon-blue);">$3 off when you pay with cash.</strong> Cash is preferred.<br>
             <span style="margin-top: 8px; display: inline-block;">12 hour cancellation policy required to avoid a cancellation fee.</span>
