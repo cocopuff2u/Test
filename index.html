@@ -1026,13 +1026,18 @@
 
         /* Disable animations on mobile for better performance */
         @media (max-width: 768px) {
+            .fade-in,
+            .fade-in-left,
+            .fade-in-right,
+            .stagger-children > *,
             .js-ready .fade-in,
             .js-ready .fade-in-left,
             .js-ready .fade-in-right,
             .js-ready .stagger-children > * {
-                opacity: 1;
-                transform: none;
-                transition: none;
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+                animation: none !important;
             }
         }
 
@@ -1882,8 +1887,16 @@
 
         // Scroll animations using Intersection Observer
         (function() {
-            // Add js-ready class to enable animations only after JS loads
+            // Add js-ready class
             document.body.classList.add('js-ready');
+
+            // Skip scroll animations on mobile - everything shows immediately
+            if (window.innerWidth <= 768) {
+                document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .stagger-children').forEach(el => {
+                    el.classList.add('visible');
+                });
+                return;
+            }
 
             const observerOptions = {
                 root: null,
