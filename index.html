@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Liz Cutz Hair | Charleston SC Barber | @lizcutzhair</title>
+    <meta name="description" content="Charleston's go-to barber for precision fades, clean lineups, and fresh styles. Book your appointment with Liz Beach at Geers Barbershop in West Ashley.">
+    <meta name="keywords" content="barber, barbershop, haircut, fade, lineup, mens haircut, Charleston barber, West Ashley barber, Liz Cutz Hair, Geers Barbershop">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Liz Cutz Hair | Charleston SC Barber">
+    <meta property="og:description" content="Charleston's go-to barber for precision fades, clean lineups, and fresh styles. Book your appointment today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lizcutzhair.com">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicon (scissors emoji as SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️</text></svg>">
+
+    <!-- Prevent theme flash - must be in head, before content renders -->
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved) {
+                    document.documentElement.setAttribute('data-theme', saved);
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <style>
+        /* Prevent flash - set default dark background immediately */
+        html {
+            background-color: #0a0a0a;
+        }
+        html[data-theme="light"] {
+            background-color: #f5f5f5;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-pink: #ff2d95;
+            --neon-blue: #00f0ff;
+            --dark: #0a0a0a;
+            --darker: #050505;
+
+            /* Dark mode (default) */
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #050505;
+            --bg-card: #111;
+            --bg-card-hover: #1a1a1a;
+            --text-primary: #fff;
+            --text-secondary: #999;
+            --text-muted: #666;
+            --border-color: #222;
+            --nav-bg: rgba(0, 0, 0, 0.8);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f5f5f5;
+            --bg-secondary: #fff;
+            --bg-card: #fff;
+            --bg-card-hover: #f0f0f0;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555;
+            --text-muted: #888;
+            --border-color: #ddd;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --neon-pink: #d91a6e;
+            --neon-blue: #0099aa;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme="dark"]) {
+                --bg-primary: #f5f5f5;
+                --bg-secondary: #fff;
+                --bg-card: #fff;
+                --bg-card-hover: #f0f0f0;
+                --text-primary: #1a1a1a;
+                --text-secondary: #555;
+                --text-muted: #888;
+                --border-color: #ddd;
+                --nav-bg: rgba(255, 255, 255, 0.9);
+                --neon-pink: #d91a6e;
+                --neon-blue: #0099aa;
+            }
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Animated gradient background */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            background: var(--bg-primary);
+            overflow: visible;
+            transition: background 0.3s;
+        }
+
+        /* Gradient orbs with mask to fade edges */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 40% 40% at 35% 60%, rgba(255, 45, 149, 0.18) 0%, transparent 100%),
+                radial-gradient(ellipse 40% 40% at 65% 35%, rgba(0, 240, 255, 0.12) 0%, transparent 100%);
+            pointer-events: none;
+            filter: blur(80px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 15vw, 10rem);
+            letter-spacing: 8px;
+            line-height: 0.9;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-primary) 50%, var(--neon-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .hero .handle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            padding: 12px 30px;
+            border: 1px solid var(--neon-pink);
+            color: var(--neon-pink);
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            min-height: 48px;
+        }
+
+        .hero .handle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,45,149,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .hero .handle:hover::before {
+            left: 100%;
+        }
+
+        .hero .handle:hover {
+            background: var(--neon-pink);
+            color: #000;
+            box-shadow: 0 0 30px rgba(255, 45, 149, 0.5);
+        }
+
+        .hero-rating {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero-rating {
+            color: var(--neon-pink);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 35px;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            min-height: 52px;
+        }
+
+        .hero-btn.primary {
+            background: var(--neon-pink);
+            color: #fff;
+        }
+
+        .hero-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 45, 149, 0.4);
+        }
+
+        .hero-btn.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .hero-btn.secondary:hover {
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--neon-pink), transparent);
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: transparent;
+            transition: all 0.3s;
+        }
+
+        nav .brand {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 3px;
+            opacity: 0.8;
+            transition: opacity 0.3s, color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        nav .brand:hover,
+        nav .brand:active {
+            opacity: 1;
+            color: var(--text-primary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            padding: 8px 4px;
+        }
+
+        nav a:hover,
+        nav a:active {
+            color: var(--text-primary);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s;
+            opacity: 0.6;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:active {
+            opacity: 1;
+            color: var(--text-primary);
+            background: rgba(128, 128, 128, 0.1);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            background: none;
+            border: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .mobile-menu-btn:hover,
+        .mobile-menu-btn:active {
+            opacity: 1;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            z-index: 1001;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            transition: color 0.3s;
+            padding: 12px 24px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a:active {
+            color: var(--neon-pink);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: max(15px, env(safe-area-inset-top));
+            right: max(20px, env(safe-area-inset-right));
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            z-index: 1003;
+            line-height: 1;
+        }
+
+        /* Hide nav when mobile menu is open */
+        body.menu-open nav {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 5px;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--neon-pink);
+        }
+
+        /* About Section */
+        #about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image .placeholder {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover));
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .about-image .placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            opacity: 0.1;
+        }
+
+        .about-image .placeholder-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-image .placeholder p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .profile-photo-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            box-shadow: 0 10px 40px rgba(255, 45, 149, 0.3);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-text p strong {
+            color: var(--text-primary);
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--neon-pink);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Services */
+        #services {
+            background: linear-gradient(180deg, transparent, rgba(255,45,149,0.03), transparent);
+            padding: 100px 20px;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover));
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            border-radius: 15px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--text-muted);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .service-card .price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--neon-pink);
+        }
+
+        .service-card .service-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        /* Instagram Section */
+        #instagram {
+            text-align: center;
+            padding: 100px 20px;
+            background: var(--bg-secondary);
+            max-width: 100%;
+            transition: background 0.3s;
+        }
+
+        .instagram-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .insta-header {
+            margin-bottom: 40px;
+        }
+
+        .insta-header .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .insta-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-bottom: 40px;
+        }
+
+        .insta-feed iframe {
+            border-radius: 12px !important;
+        }
+
+        .insta-feed blockquote {
+            margin: 0 !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            width: 100% !important;
+        }
+
+        .insta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+            margin-top: 30px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            min-height: 52px;
+        }
+
+        .insta-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(253, 29, 29, 0.3);
+        }
+
+        .insta-link svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .insta-note {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 20px;
+        }
+
+        /* Location */
+        #location {
+            padding: 100px 20px;
+        }
+
+        .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .location-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .location-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            color: var(--neon-blue);
+        }
+
+        .location-card p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .location-card a {
+            color: var(--neon-pink);
+            text-decoration: none;
+            transition: opacity 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            display: inline-block;
+            padding: 4px 0;
+        }
+
+        .location-card a:hover,
+        .location-card a:active {
+            opacity: 0.7;
+        }
+
+        .location-map {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .location-map {
+                min-height: 300px;
+            }
+
+            .location-map iframe {
+                min-height: 300px;
+            }
+        }
+
+        /* Book CTA */
+        #book {
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            background: var(--bg-primary);
+            transition: background 0.3s;
+            overflow: visible;
+        }
+
+        #book::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 35% 50% at 50% 50%, rgba(255, 45, 149, 0.12) 0%, transparent 100%);
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
+        #book .section-title {
+            font-size: 4rem;
+        }
+
+        #book .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #book p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .book-btn {
+            display: inline-block;
+            padding: 20px 60px;
+            background: linear-gradient(135deg, var(--neon-pink), #ff6b6b);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .book-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .book-btn:hover::before {
+            left: 100%;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 45, 149, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        footer .social a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            padding: 8px 12px;
+        }
+
+        footer .social a:hover,
+        footer .social a:active {
+            color: var(--neon-pink);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Animations - only apply when JS is ready */
+        .js-ready .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .js-ready .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .js-ready .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .js-ready .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .js-ready .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .js-ready .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Staggered children animation */
+        .js-ready .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .js-ready .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+        .js-ready .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+        .js-ready .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+        .js-ready .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
+        .js-ready .stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
+        .js-ready .stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; }
+
+        .js-ready .stagger-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Title Animation */
+        .hero-title {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Only animate spans when JS adds the .animated class */
+        .hero-title.animated span {
+            display: inline-block;
+            opacity: 0;
+            -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+            -webkit-animation: letterReveal 0.6s ease forwards;
+            animation: letterReveal 0.6s ease forwards;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        @-webkit-keyframes letterReveal {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes letterReveal {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+
+        /* Fallback: ensure text is visible after animation should complete */
+        .hero-title.animated.animation-done span {
+            opacity: 1 !important;
+            -webkit-transform: translateY(0) !important;
+            transform: translateY(0) !important;
+            -webkit-animation: none !important;
+            animation: none !important;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            padding: 100px 20px;
+            background: var(--bg-primary);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            border-radius: 15px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-pink);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 4rem;
+            color: var(--neon-pink);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-date {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Sticky Mobile CTA */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 900;
+            background: linear-gradient(135deg, var(--neon-pink), #ff6b6b);
+            color: #fff;
+            text-align: center;
+            padding: 16px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            box-shadow: 0 10px 40px rgba(255, 45, 149, 0.4);
+            transition: all 0.3s;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            min-height: 52px;
+        }
+
+        .sticky-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(255, 45, 149, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                display: block;
+                bottom: max(20px, env(safe-area-inset-bottom));
+                left: max(20px, env(safe-area-inset-left));
+                right: max(20px, env(safe-area-inset-right));
+            }
+
+            footer {
+                padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+            }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 800;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--neon-pink);
+            border-color: var(--neon-pink);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+                right: max(20px, env(safe-area-inset-right));
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .insta-feed {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                padding-top: max(15px, env(safe-area-inset-top));
+                padding-left: max(20px, env(safe-area-inset-left));
+                padding-right: max(20px, env(safe-area-inset-right));
+                background: transparent;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            nav .brand {
+                font-size: 1.1rem;
+                opacity: 0.8;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            nav .theme-toggle {
+                display: none;
+            }
+
+            .hero {
+                min-height: 100svh;
+                padding: 80px 20px 40px;
+            }
+
+            .hero h1 {
+                letter-spacing: 4px;
+            }
+
+            .hero .tagline {
+                font-size: 0.85rem;
+                letter-spacing: 4px;
+            }
+
+            .logo-icon {
+                font-size: 3rem;
+            }
+
+            .hero-rating {
+                font-size: 0.8rem;
+                margin-top: 12px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                margin-top: 25px;
+                width: 100%;
+            }
+
+            .hero-btn {
+                width: 280px;
+                max-width: 100%;
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            section {
+                padding: 60px 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                letter-spacing: 3px;
+                margin-bottom: 30px;
+            }
+
+            #about {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image .placeholder {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            #services {
+                padding: 60px 15px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .service-card .price {
+                font-size: 1.6rem;
+            }
+
+            #instagram {
+                padding: 60px 15px;
+            }
+
+            .insta-feed {
+                grid-template-columns: 1fr;
+            }
+
+            .insta-link {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+
+            #location {
+                padding: 60px 15px;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .location-card {
+                padding: 25px;
+            }
+
+            .location-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+
+            .location-map {
+                min-height: 280px;
+            }
+
+            .location-map iframe {
+                min-height: 280px;
+            }
+
+            /* Testimonials mobile */
+            #testimonials {
+                padding: 60px 15px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .testimonial-card {
+                padding: 25px;
+            }
+
+            .testimonial-text {
+                font-size: 0.95rem;
+            }
+
+            #book {
+                padding: 80px 15px;
+            }
+
+            #book .section-title {
+                font-size: 2.5rem;
+            }
+
+            #book p {
+                font-size: 1rem;
+            }
+
+            .book-btn {
+                padding: 18px 40px;
+                font-size: 1.2rem;
+                letter-spacing: 3px;
+            }
+
+            footer {
+                padding: 30px 15px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1, .hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .hero .tagline {
+                font-size: 0.7rem;
+                letter-spacing: 2px;
+            }
+
+            .hero .handle {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .hero-rating {
+                font-size: 0.75rem;
+            }
+
+            .hero-btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+                letter-spacing: 2px;
+            }
+
+            .stats {
+                gap: 25px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+
+            .testimonial-card::before {
+                font-size: 3rem;
+                top: 10px;
+                left: 15px;
+            }
+
+            .location-card {
+                padding: 20px;
+            }
+
+            .book-btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+
+            .sticky-cta {
+                padding: 14px 15px;
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="brand">LIZ CUTZ</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#book">Book</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                <span id="themeIcon">☀️</span>
+            </button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#instagram" onclick="toggleMenu()">Instagram</a>
+        <a href="#location" onclick="toggleMenu()">Location</a>
+        <a href="#book" onclick="toggleMenu()">Book Now</a>
+        <button class="theme-toggle" onclick="toggleTheme()" style="margin-top: 20px; width: 50px; height: 50px; font-size: 1.3rem;" aria-label="Toggle theme">
+            <span id="themeIconMobile">☀️</span>
+        </button>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-icon">✂️</div>
+            <h1 class="hero-title" id="heroTitle">LIZ CUTZ</h1>
+            <p class="tagline">Precision Cuts • Clean Fades • Fresh Styles</p>
+            <p class="hero-rating">★ 5.0 rating • 139 reviews</p>
+            <div class="hero-buttons">
+                <a href="https://book.thecut.co/lizcutzhair" target="_blank" class="hero-btn primary">BOOK NOW</a>
+                <a href="https://www.instagram.com/lizcutzhair/" target="_blank" class="hero-btn secondary">@lizcutzhair</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-image fade-in-left">
+            <div class="profile-photo-wrapper">
+                <img src="Liz.jpg" alt="Liz Beach - Barber" class="profile-photo">
+            </div>
+        </div>
+        <div class="about-text fade-in-right">
+            <h2 class="section-title">THE BARBER</h2>
+            <p><strong>Liz Beach</strong> isn't just a barber, she's an artist with clippers. Known for her precision fades, clean lineups, and attention to detail, Liz has built a reputation for making every client look and feel their best.</p>
+            <p>Whether you're after a classic cut, a fresh fade, or something completely custom, you're in expert hands. Every cut is crafted with care, skill, and a whole lot of passion for the craft.</p>
+            <p>Check out <strong>@lizcutzhair</strong> on Instagram to see the work and vibe before you book.</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">5.0★</div>
+                    <div class="stat-label">Rating</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">139</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="services-container">
+            <h2 class="section-title fade-in">SERVICES</h2>
+            <div class="services-grid stagger-children">
+                <div class="service-card">
+                    <h3>New Client / First Timer</h3>
+                    <div class="price">$37</div>
+                    <p class="service-desc">First time in my chair? I take extra care getting to know you and your hair. Cut, carve, shape, and style with razor neckline shave and hot towel.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Men's Haircut</h3>
+                    <div class="price">$35</div>
+                    <p class="service-desc">Cut, carve, shape, and style. Finished with a razor neckline shave and hot towel.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Haircut & Beard Trim</h3>
+                    <div class="price">$45</div>
+                    <p class="service-desc">The complete package. Fresh haircut plus full beard trim with clean lines and a polished finish.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Beard Trim</h3>
+                    <div class="price">$16</div>
+                    <p class="service-desc">Cut, carve, and shape your beard to perfection. Straight razor outline available (+$10).</p>
+                </div>
+                <div class="service-card">
+                    <h3>Hot Towel Straight Razor Shave</h3>
+                    <div class="price">$45</div>
+                    <p class="service-desc">Pampering at its finest. Classic straight razor face shave with hot towels, leaving your skin baby smooth.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Deep Conditioning Treatment</h3>
+                    <div class="price">$15</div>
+                    <p class="service-desc">Add to any service. Hot towel deep conditioning with scalp and facial massage.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Eyebrow Wax</h3>
+                    <div class="price">$15</div>
+                    <p class="service-desc">Shape, trim, and wax for clean, defined brows.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Junior Cut (Ages 4-10)</h3>
+                    <div class="price">$30</div>
+                    <p class="service-desc">Cut, carve, shape, and style for the little guy.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Baby Cut (Under 3)</h3>
+                    <div class="price">$25</div>
+                    <p class="service-desc">Even the little man deserves a fresh look.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Color Application</h3>
+                    <div class="price">$40</div>
+                    <p class="service-desc">Standard grey coverage. Message through the app to discuss custom color options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instagram">
+        <div class="instagram-container">
+            <div class="insta-header">
+                <h2 class="section-title">SEE THE WORK</h2>
+            </div>
+
+            <!-- Instagram Embeds Grid -->
+            <div class="insta-feed">
+                <!--
+                    HOW TO ADD INSTAGRAM POSTS:
+                    1. Go to any Instagram post
+                    2. Click the three dots (...) on the post
+                    3. Click "Embed"
+                    4. Copy the blockquote code
+                    5. Paste it below (replace these examples)
+                -->
+
+                <!-- Example Embed 1 - Replace with real post -->
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/lizcutzhair/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                    <div style="padding:16px;">
+                        <a href="https://www.instagram.com/lizcutzhair/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                            <div style="display: flex; flex-direction: row; align-items: center;">
+                                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                                </div>
+                            </div>
+                            <div style="padding: 19% 0;"></div>
+                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                                <svg width="50px" height="50px" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g transform="translate(9 9)" fill="#000"><circle fill-opacity="0.15" cx="21" cy="21" r="21"/><path d="M21,0 C9.4,0 0,9.4 0,21 C0,32.6 9.4,42 21,42 C32.6,42 42,32.6 42,21 C42,9.4 32.6,0 21,0 Z M17.5,31.5 L17.5,12.5 L31.5,22 L17.5,31.5 Z" fill="#000"/></g></g></svg>
+                            </div>
+                            <div style="padding-top: 8px;">
+                                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550;">View this post on Instagram</div>
+                            </div>
+                        </a>
+                        <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;">
+                            <a href="https://www.instagram.com/lizcutzhair/" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">@lizcutzhair</a>
+                        </p>
+                    </div>
+                </blockquote>
+
+                <!-- Example Embed 2 - Replace with real post -->
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/lizcutzhair/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                    <div style="padding:16px;">
+                        <a href="https://www.instagram.com/lizcutzhair/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                            <div style="display: flex; flex-direction: row; align-items: center;">
+                                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                                </div>
+                            </div>
+                            <div style="padding: 19% 0;"></div>
+                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                                <svg width="50px" height="50px" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g transform="translate(9 9)" fill="#000"><circle fill-opacity="0.15" cx="21" cy="21" r="21"/><path d="M21,0 C9.4,0 0,9.4 0,21 C0,32.6 9.4,42 21,42 C32.6,42 42,32.6 42,21 C42,9.4 32.6,0 21,0 Z M17.5,31.5 L17.5,12.5 L31.5,22 L17.5,31.5 Z" fill="#000"/></g></g></svg>
+                            </div>
+                            <div style="padding-top: 8px;">
+                                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550;">View this post on Instagram</div>
+                            </div>
+                        </a>
+                        <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;">
+                            <a href="https://www.instagram.com/lizcutzhair/" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">@lizcutzhair</a>
+                        </p>
+                    </div>
+                </blockquote>
+
+                <!-- Example Embed 3 - Replace with real post -->
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/lizcutzhair/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                    <div style="padding:16px;">
+                        <a href="https://www.instagram.com/lizcutzhair/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                            <div style="display: flex; flex-direction: row; align-items: center;">
+                                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                                </div>
+                            </div>
+                            <div style="padding: 19% 0;"></div>
+                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                                <svg width="50px" height="50px" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g transform="translate(9 9)" fill="#000"><circle fill-opacity="0.15" cx="21" cy="21" r="21"/><path d="M21,0 C9.4,0 0,9.4 0,21 C0,32.6 9.4,42 21,42 C32.6,42 42,32.6 42,21 C42,9.4 32.6,0 21,0 Z M17.5,31.5 L17.5,12.5 L31.5,22 L17.5,31.5 Z" fill="#000"/></g></g></svg>
+                            </div>
+                            <div style="padding-top: 8px;">
+                                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550;">View this post on Instagram</div>
+                            </div>
+                        </a>
+                        <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;">
+                            <a href="https://www.instagram.com/lizcutzhair/" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">@lizcutzhair</a>
+                        </p>
+                    </div>
+                </blockquote>
+            </div>
+
+            <a href="https://www.instagram.com/lizcutzhair/" target="_blank" class="insta-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Follow @lizcutzhair
+            </a>
+            <p class="insta-note">Check out the latest cuts, fades, and transformations</p>
+        </div>
+    </section>
+
+    <!-- Instagram Embed Script -->
+    <script async src="//www.instagram.com/embed.js"></script>
+
+    <section id="location">
+        <div class="location-container">
+            <h2 class="section-title fade-in">FIND ME</h2>
+            <div class="location-content">
+                <div class="location-info fade-in-left">
+                    <div class="location-card">
+                        <h3>📍 LOCATION</h3>
+                        <p><strong>Geers Barbershop</strong></p>
+                        <p>1350 Ashley River Road, Suite 200</p>
+                        <p>Charleston, SC 29412</p>
+                        <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
+                            <a href="https://maps.apple.com/?daddr=1350+Ashley+River+Road,+Charleston,+SC+29412" target="_blank" style="padding: 10px 16px; background: var(--bg-card-hover); border-radius: 8px; font-size: 0.9rem;">Apple Maps →</a>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1350+Ashley+River+Road,+Charleston,+SC+29412" target="_blank" style="padding: 10px 16px; background: var(--bg-card-hover); border-radius: 8px; font-size: 0.9rem;">Google Maps →</a>
+                        </div>
+                    </div>
+                    <div class="location-card">
+                        <h3>🕐 HOURS</h3>
+                        <p>Monday: 9:30am - 4:30pm</p>
+                        <p>Wednesday: 10:30am - 6pm</p>
+                        <p>Thursday: 10am - 3:30pm</p>
+                        <p>Friday: 9:45am - 4pm</p>
+                        <p>Saturday: 7:45am - 1pm</p>
+                        <p>Tuesday & Sunday: Closed</p>
+                    </div>
+                    <div class="location-card">
+                        <h3>📱 CONTACT</h3>
+                        <p><a href="https://www.instagram.com/lizcutzhair/" target="_blank">@lizcutzhair</a></p>
+                        <p><a href="https://book.thecut.co/lizcutzhair" target="_blank">Book on The Cut App</a></p>
+                    </div>
+                </div>
+                <div class="location-map fade-in-right">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.8!2d-80.0134!3d32.8076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7a5a77e5c9c7%3A0x1234567890abcdef!2s1350%20Ashley%20River%20Rd%2C%20Charleston%2C%20SC%2029412!5e0!3m2!1sen!2sus!4v1703862000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="testimonials-container">
+            <h2 class="section-title fade-in">WHAT CLIENTS SAY</h2>
+            <div class="testimonials-grid stagger-children">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Liz always does an exceptional job! The quality and consistency of each haircut has kept me coming back over the last year. Give her a shot if you want a laid back barber that doesn't miss. She's worth every penny!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Matt Morris</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">I am very picky with my hair and was nervous to switch barbers. I went to Liz and asked for a bald fade and she crushed it! Liz can do any type of cut you're looking for, no matter what it is. Highly recommend booking an appointment with her!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div>
+                            <div class="testimonial-name">Corey Morrell</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Liz is the best! I know every time I go in for a haircut, it's going to be consistent and just what I'm looking for. Liz is the only person I trust to cut my hair!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">J</div>
+                        <div>
+                            <div class="testimonial-name">Jordan Brichant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book">
+        <h2 class="section-title fade-in">BOOK YOUR CUT</h2>
+        <p class="fade-in">Ready for a fresh look? Book your appointment through The Cut app. Quick, easy, no waiting.</p>
+        <a href="https://book.thecut.co/lizcutzhair" target="_blank" class="book-btn fade-in">BOOK ON THE CUT</a>
+        <p class="fade-in" style="margin-top: 30px; color: var(--text-muted); font-size: 0.9rem;">
+            <strong style="color: var(--neon-blue);">$3 off when you pay with cash.</strong> Cash is preferred.<br>
+            <span style="margin-top: 8px; display: inline-block;">12 hour cancellation policy required to avoid a cancellation fee.</span>
+        </p>
+    </section>
+
+    <!-- Sticky Mobile CTA -->
+    <a href="https://book.thecut.co/lizcutzhair" target="_blank" class="sticky-cta">BOOK NOW</a>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <footer>
+        <div class="social">
+            <a href="https://www.instagram.com/lizcutzhair/" target="_blank">Instagram</a>
+            <a href="https://book.thecut.co/lizcutzhair" target="_blank">Book on The Cut</a>
+            <a href="https://maps.apple.com/?daddr=1350+Ashley+River+Road,+Charleston,+SC+29412" target="_blank">Apple Maps</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=1350+Ashley+River+Road,+Charleston,+SC+29412" target="_blank">Google Maps</a>
+        </div>
+        <p>© 2025 Liz Cutz Hair. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const isOpen = menu.classList.toggle('active');
+            document.body.classList.toggle('menu-open', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : (currentTheme === 'light' ? 'dark' :
+                (window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light'));
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('themeIcon');
+            const iconMobile = document.getElementById('themeIconMobile');
+            const isLight = theme === 'light' || (theme === null && window.matchMedia('(prefers-color-scheme: light)').matches);
+
+            if (icon) icon.textContent = isLight ? '🌙' : '☀️';
+            if (iconMobile) iconMobile.textContent = isLight ? '🌙' : '☀️';
+        }
+
+        // Initialize theme on page load
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+            updateThemeIcon(savedTheme);
+        })();
+
+        // Hero title letter animation
+        (function() {
+            const title = document.getElementById('heroTitle');
+            if (title && title.textContent) {
+                const text = title.textContent.trim();
+                if (text) {
+                    title.innerHTML = '';
+                    title.classList.add('animated');
+                    const spans = [];
+                    text.split('').forEach((letter, i) => {
+                        const span = document.createElement('span');
+                        span.textContent = letter === ' ' ? '\u00A0' : letter;
+                        span.style.animationDelay = `${0.1 + i * 0.08}s`;
+                        title.appendChild(span);
+                        spans.push(span);
+                    });
+
+                    // Fallback: force visibility after animation should complete
+                    setTimeout(() => {
+                        title.classList.add('animation-done');
+                        // Also force inline styles as ultimate fallback
+                        spans.forEach(span => {
+                            span.style.opacity = '1';
+                            span.style.transform = 'translateY(0)';
+                        });
+                    }, 800);
+                }
+            }
+        })();
+
+        // Scroll animations using Intersection Observer
+        (function() {
+            // Add js-ready class to enable animations only after JS loads
+            document.body.classList.add('js-ready');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.01
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .stagger-children');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Trigger check for elements already in viewport on load
+            setTimeout(() => {
+                animatedElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        })();
+
+        // Back to Top Button & Sticky CTA visibility
+        (function() {
+            const backToTop = document.getElementById('backToTop');
+            const stickyCta = document.querySelector('.sticky-cta');
+            const bookSection = document.getElementById('book');
+            const footer = document.querySelector('footer');
+            const hero = document.querySelector('.hero');
+
+            function updateUI() {
+                const scrollY = window.scrollY;
+                const heroHeight = hero ? hero.offsetHeight : 500;
+
+                // Back to top visibility
+                if (scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+
+                // Sticky CTA: show after scrolling past hero, hide near book/footer
+                if (stickyCta) {
+                    const pastHero = scrollY > heroHeight * 0.5;
+                    const bookRect = bookSection ? bookSection.getBoundingClientRect() : null;
+                    const footerRect = footer ? footer.getBoundingClientRect() : null;
+                    const isBookVisible = bookRect && bookRect.top < window.innerHeight - 50;
+                    const isFooterVisible = footerRect && footerRect.top < window.innerHeight;
+                    const shouldShow = pastHero && !isBookVisible && !isFooterVisible;
+
+                    stickyCta.style.opacity = shouldShow ? '1' : '0';
+                    stickyCta.style.pointerEvents = shouldShow ? 'auto' : 'none';
+                    stickyCta.style.transform = shouldShow ? 'translateY(0)' : 'translateY(100px)';
+                }
+            }
+
+            window.addEventListener('scroll', updateUI, { passive: true });
+            updateUI(); // Run on load
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+</html>
