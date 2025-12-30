@@ -707,6 +707,31 @@
             width: 100% !important;
         }
 
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gallery-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+        }
+
         .insta-link {
             display: inline-flex;
             align-items: center;
@@ -999,47 +1024,62 @@
             transform: translateY(0);
         }
 
-        /* Hero Title Animation */
+        /* Disable animations on mobile for better performance */
+        @media (max-width: 768px) {
+            .js-ready .fade-in,
+            .js-ready .fade-in-left,
+            .js-ready .fade-in-right,
+            .js-ready .stagger-children > * {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Hero Title Animation - Desktop only */
         .hero-title {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* Only animate spans when JS adds the .animated class */
-        .hero-title.animated span {
-            display: inline-block;
-            opacity: 0;
-            -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-            -webkit-animation: letterReveal 0.6s ease forwards;
-            animation: letterReveal 0.6s ease forwards;
-            -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-        }
-
-        @-webkit-keyframes letterReveal {
-            0% {
+        /* Only animate spans when JS adds the .animated class - desktop only */
+        @media (min-width: 769px) {
+            .hero-title.animated span {
+                display: inline-block;
                 opacity: 0;
                 -webkit-transform: translateY(100%);
                 transform: translateY(100%);
+                -webkit-animation: letterReveal 0.6s ease forwards;
+                animation: letterReveal 0.6s ease forwards;
             }
-            100% {
-                opacity: 1;
-                -webkit-transform: translateY(0);
-                transform: translateY(0);
+        }
+
+        /* Mobile: no animation, just show title */
+        @media (max-width: 768px) {
+            .hero-title.animated span {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
             }
         }
 
         @keyframes letterReveal {
             0% {
                 opacity: 0;
-                -webkit-transform: translateY(100%);
                 transform: translateY(100%);
             }
             100% {
                 opacity: 1;
-                -webkit-transform: translateY(0);
                 transform: translateY(0);
             }
         }
@@ -1649,91 +1689,11 @@
                 <h2 class="section-title">SEE THE WORK</h2>
             </div>
 
-            <!-- Instagram Embeds Grid -->
-            <div class="insta-feed">
-                <!--
-                    HOW TO ADD INSTAGRAM POSTS:
-                    1. Go to any Instagram post
-                    2. Click the three dots (...) on the post
-                    3. Click "Embed"
-                    4. Copy the blockquote code
-                    5. Paste it below (replace these examples)
-                -->
-
-                <!-- Example Embed 1 - Replace with real post -->
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/lizcutzhair/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                    <div style="padding:16px;">
-                        <a href="https://www.instagram.com/lizcutzhair/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                            <div style="display: flex; flex-direction: row; align-items: center;">
-                                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
-                                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
-                                </div>
-                            </div>
-                            <div style="padding: 19% 0;"></div>
-                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
-                                <svg width="50px" height="50px" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g transform="translate(9 9)" fill="#000"><circle fill-opacity="0.15" cx="21" cy="21" r="21"/><path d="M21,0 C9.4,0 0,9.4 0,21 C0,32.6 9.4,42 21,42 C32.6,42 42,32.6 42,21 C42,9.4 32.6,0 21,0 Z M17.5,31.5 L17.5,12.5 L31.5,22 L17.5,31.5 Z" fill="#000"/></g></g></svg>
-                            </div>
-                            <div style="padding-top: 8px;">
-                                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550;">View this post on Instagram</div>
-                            </div>
-                        </a>
-                        <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;">
-                            <a href="https://www.instagram.com/lizcutzhair/" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">@lizcutzhair</a>
-                        </p>
-                    </div>
-                </blockquote>
-
-                <!-- Example Embed 2 - Replace with real post -->
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/lizcutzhair/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                    <div style="padding:16px;">
-                        <a href="https://www.instagram.com/lizcutzhair/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                            <div style="display: flex; flex-direction: row; align-items: center;">
-                                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
-                                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
-                                </div>
-                            </div>
-                            <div style="padding: 19% 0;"></div>
-                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
-                                <svg width="50px" height="50px" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g transform="translate(9 9)" fill="#000"><circle fill-opacity="0.15" cx="21" cy="21" r="21"/><path d="M21,0 C9.4,0 0,9.4 0,21 C0,32.6 9.4,42 21,42 C32.6,42 42,32.6 42,21 C42,9.4 32.6,0 21,0 Z M17.5,31.5 L17.5,12.5 L31.5,22 L17.5,31.5 Z" fill="#000"/></g></g></svg>
-                            </div>
-                            <div style="padding-top: 8px;">
-                                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550;">View this post on Instagram</div>
-                            </div>
-                        </a>
-                        <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;">
-                            <a href="https://www.instagram.com/lizcutzhair/" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">@lizcutzhair</a>
-                        </p>
-                    </div>
-                </blockquote>
-
-                <!-- Example Embed 3 - Replace with real post -->
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/lizcutzhair/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                    <div style="padding:16px;">
-                        <a href="https://www.instagram.com/lizcutzhair/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                            <div style="display: flex; flex-direction: row; align-items: center;">
-                                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
-                                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
-                                </div>
-                            </div>
-                            <div style="padding: 19% 0;"></div>
-                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
-                                <svg width="50px" height="50px" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g transform="translate(9 9)" fill="#000"><circle fill-opacity="0.15" cx="21" cy="21" r="21"/><path d="M21,0 C9.4,0 0,9.4 0,21 C0,32.6 9.4,42 21,42 C32.6,42 42,32.6 42,21 C42,9.4 32.6,0 21,0 Z M17.5,31.5 L17.5,12.5 L31.5,22 L17.5,31.5 Z" fill="#000"/></g></g></svg>
-                            </div>
-                            <div style="padding-top: 8px;">
-                                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550;">View this post on Instagram</div>
-                            </div>
-                        </a>
-                        <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center;">
-                            <a href="https://www.instagram.com/lizcutzhair/" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">@lizcutzhair</a>
-                        </p>
-                    </div>
-                </blockquote>
+            <!-- Photo Gallery - Add your images here -->
+            <div class="photo-gallery">
+                <img src="work1.jpg" alt="Haircut by Liz" class="gallery-photo">
+                <img src="work2.jpg" alt="Haircut by Liz" class="gallery-photo">
+                <img src="work3.jpg" alt="Haircut by Liz" class="gallery-photo">
             </div>
 
             <a href="https://www.instagram.com/lizcutzhair/" target="_blank" class="insta-link">
@@ -1888,8 +1848,11 @@
             updateThemeIcon(savedTheme);
         })();
 
-        // Hero title letter animation
+        // Hero title letter animation - desktop only
         (function() {
+            // Skip animation on mobile
+            if (window.innerWidth <= 768) return;
+
             const title = document.getElementById('heroTitle');
             if (title && title.textContent) {
                 const text = title.textContent.trim();
@@ -1908,7 +1871,6 @@
                     // Fallback: force visibility after animation should complete
                     setTimeout(() => {
                         title.classList.add('animation-done');
-                        // Also force inline styles as ultimate fallback
                         spans.forEach(span => {
                             span.style.opacity = '1';
                             span.style.transform = 'translateY(0)';
