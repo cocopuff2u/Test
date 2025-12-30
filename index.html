@@ -49,6 +49,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -1291,11 +1293,20 @@
             visibility: visible;
         }
 
-        .back-to-top:hover {
+        /* Only apply hover on devices that support it */
+        @media (hover: hover) {
+            .back-to-top:hover {
+                background: var(--neon-pink);
+                border-color: var(--neon-pink);
+                color: #fff;
+                transform: translateY(-3px);
+            }
+        }
+
+        .back-to-top:active {
             background: var(--neon-pink);
             border-color: var(--neon-pink);
             color: #fff;
-            transform: translateY(-3px);
         }
 
         @media (max-width: 768px) {
@@ -1730,9 +1741,9 @@
 
             <!-- Photo Gallery - Add your images here -->
             <div class="photo-gallery">
-                <img src="work1.webp" alt="Haircut by Liz" class="gallery-photo">
-                <img src="work2.webp" alt="Haircut by Liz" class="gallery-photo">
-                <img src="work3.webp" alt="Haircut by Liz" class="gallery-photo">
+                <img src="work1.webp" alt="Haircut by Liz" class="gallery-photo" loading="lazy" width="300" height="300">
+                <img src="work2.webp" alt="Haircut by Liz" class="gallery-photo" loading="lazy" width="300" height="300">
+                <img src="work3.webp" alt="Haircut by Liz" class="gallery-photo" loading="lazy" width="300" height="300">
             </div>
 
             <a href="https://www.instagram.com/lizcutzhair/" target="_blank" class="insta-link">
@@ -1744,9 +1755,6 @@
             <p class="insta-note">Check out the latest cuts, fades, and transformations</p>
         </div>
     </section>
-
-    <!-- Instagram Embed Script -->
-    <script async src="//www.instagram.com/embed.js"></script>
 
     <section id="location">
         <div class="location-container">
@@ -1779,7 +1787,7 @@
                     </div>
                 </div>
                 <div class="location-map fade-in-right">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.8!2d-80.0134!3d32.8076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7a5a77e5c9c7%3A0x1234567890abcdef!2s1350%20Ashley%20River%20Rd%2C%20Charleston%2C%20SC%2029412!5e0!3m2!1sen!2sus!4v1703862000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.8!2d-80.0134!3d32.8076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7a5a77e5c9c7%3A0x1234567890abcdef!2s1350%20Ashley%20River%20Rd%2C%20Charleston%2C%20SC%2029412!5e0!3m2!1sen!2sus!4v1703862000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Geers Barbershop"></iframe>
                 </div>
             </div>
         </div>
